@@ -1,6 +1,6 @@
 # One Rep Max Calculator - CLI Tool
 
-- Uses the Brzycki formula to create a 1rm using weight and reps
+- Uses the Brzycki formula to calculate your one rep max using weight and reps of a recent personal best
 
 ## To run:
 
