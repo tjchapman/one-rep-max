@@ -26,7 +26,7 @@ func Parser(text string) (float64) {
 	return float
 }
 
-func CorrectDataTyoe(input float64) bool {
+func CorrectDataType(input float64) bool {
 	if input == 0 {
 		return false
 	} else {
@@ -54,28 +54,26 @@ func main()  {
 	fmt.Print("Enter the weight (kg) you hit for reps: ")
 	scanner.Scan()
 	weight := Parser(scanner.Text())
-	if !CorrectDataTyoe(weight) {
-		fmt.Println("Please enter a number or I'll kick you out !!")
-		// Banking on the user only making this mistake once lol instead of figuring out some messy loop TODO: clean this up or find a way to do it properly
 
+	if !CorrectDataType(weight) { 
+		fmt.Println("Please enter a number!") 
 		scanner.Scan()
 		weight := Parser(scanner.Text())
-
-		if !CorrectDataTyoe(weight) {
-			panic("Should've entered a number :)")
-		}
 
 		fmt.Print("Enter the reps: ")
 		scanner.Scan()
 		reps := Parser(scanner.Text())
 
-		if !CorrectDataTyoe(reps) {
-			panic("Should've entered a number :)")
+		users_max := CalculateOneRepMax(weight, reps)
+
+		if users_max == 0 {
+			fmt.Printf("Uh oh, your max can't be calculated. Please enter numbers next time\n")
+		} else {
+			fmt.Printf("Your one rep max is: %0.fkg!\n", CalculateOneRepMax(weight, reps))
 		}
 
-		fmt.Printf("Your one rep max is: %0.fkg!\n", CalculateOneRepMax(weight, reps))
-
 	} else {
+
 		fmt.Print("Enter the reps: ")
 		scanner.Scan()
 		reps := Parser(scanner.Text())

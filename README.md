@@ -8,6 +8,12 @@ Uses the Brzycki formula to calculate your one rep max using weight and reps of 
 make run
 ```
 
+## To run manually (windows users):
+
+```
+go run main.go
+```
+
 ## To test:
 
 ```
